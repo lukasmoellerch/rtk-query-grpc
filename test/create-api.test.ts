@@ -1,4 +1,4 @@
-import { createApi } from '@rtk-incubator/rtk-query';
+import { createBaseApi } from '@rtk-incubator/rtk-query';
 import { AsObject, createGrpcDefinition, GrpcMessage } from '../src';
 
 class ListUserRequest implements GrpcMessage {
@@ -62,7 +62,7 @@ class Client {
   }
 }
 
-const api = createApi(
+const api = createBaseApi(
   createGrpcDefinition({
     client: Client,
     clientArgs: [42],
