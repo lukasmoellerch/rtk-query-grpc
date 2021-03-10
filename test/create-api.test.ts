@@ -1,10 +1,5 @@
-import {
-  AsObject,
-  createGrpcDefinition,
-  GrpcMessage,
-  GrpcMethods,
-} from '../src';
 import { createApi } from '@rtk-incubator/rtk-query';
+import { AsObject, createGrpcDefinition, GrpcMessage } from '../src';
 
 class ListUserRequest implements GrpcMessage {
   toObject() {
@@ -47,7 +42,10 @@ class Response implements GrpcMessage {
 }
 
 class Client {
-  constructor(parameter: 42) {}
+  a: number;
+  constructor(parameter: 42) {
+    this.a = parameter;
+  }
   listUsers(req: ListUserRequest) {
     return Promise.resolve(new Response());
   }
@@ -74,6 +72,7 @@ const api = createApi(
 
 describe('createGrpcApi', () => {
   it('works', () => {
+    console.log(api);
     expect(1 + 1).toEqual(2);
   });
 });
