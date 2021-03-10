@@ -2,6 +2,7 @@ import { createApi } from '@rtk-incubator/rtk-query';
 import { AsObject, createGrpcDefinition, GrpcMessage } from '../src';
 
 class ListUserRequest implements GrpcMessage {
+  a: number;
   toObject() {
     return {
       a: 42,
@@ -11,10 +12,12 @@ class ListUserRequest implements GrpcMessage {
     return new Uint8Array();
   }
   setA(a: number) {
+    this.a = a;
     return this;
   }
 }
 class CreateUserRequest implements GrpcMessage {
+  a: number;
   toObject() {
     return {
       a: 42,
@@ -24,10 +27,12 @@ class CreateUserRequest implements GrpcMessage {
     return new Uint8Array();
   }
   setA(a: number) {
+    this.a = a;
     return this;
   }
 }
 class Response implements GrpcMessage {
+  a: number;
   toObject() {
     return {
       a: 42,
@@ -37,6 +42,7 @@ class Response implements GrpcMessage {
     return new Uint8Array();
   }
   setA(a: number) {
+    this.a = a;
     return this;
   }
 }
