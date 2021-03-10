@@ -1,5 +1,5 @@
 import { createBaseApi } from '@rtk-incubator/rtk-query';
-import { AsObject, createGrpcDefinition, GrpcMessage } from '../src';
+import { AsObject, createGrpcDefinition, GrpcMessage } from '../dist';
 
 class ListUserRequest implements GrpcMessage {
   a: number = 0;
